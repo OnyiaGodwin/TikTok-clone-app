@@ -1,38 +1,32 @@
-.App {
-  text-align: center;
+html {        /*NB: always add this in your app.css*/
+  scroll-snap-type: y mandatory;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  height: 100vh;    /*sets the app to cover the bottom of the page*/
+  background-color: black;
+  display: grid;      /*This line and the next lines place the item at the center*/
+  place-items: center;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app__videos {
+  position: relative;
+  height: 800px;          /*sets the height of the video container*/
+  overflow: scroll;       
+  width: 80%;
+  max-width: 500px;       /*sets the max-width for big screen*/
+  scroll-snap-type: y mandatory;    /*sets the scroll snap to a vertical axis*/
+} 
+
+/*The best way to hid scroll bar without losing its funtionality*/
+/* Hide scrollbar for Chrome, Safari and Opera */
+.app__videos::-webkit-scrollbar {
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Hide scrollbar for IE, Edge and Firefox */
+.app__videos {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

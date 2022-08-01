@@ -1,0 +1,58 @@
+.videoFooter {
+  position: relative;   /*setting the parents positon to relative is very important*/
+  bottom: 150px;         /*sets the container 50px from the bottom*/
+  color: white;
+  margin-left: 40px;
+  display: flex;
+}
+
+.videoFooter__text {
+  flex: 1;
+}
+
+.videoFooter__text > p {
+  padding-bottom: 20px;
+}
+
+.videoFooter__text > h3 {
+  padding-bottom: 20px;
+}
+
+.videoFooter__ticker > p {
+   padding: 7px;
+   filter: invert(1);   
+}
+
+.videoFooter__ticker > h1 {
+  padding-top: 7px;  
+}
+
+/* .videoFooter__ticker > .ticker, */
+.videoFooter__ticker__music {
+  height: fit-content;
+  margin-left: 30px;
+  width: 70%;
+}
+
+.videoFooter__icon {
+  position: absolute;
+}
+
+.videoFooter__record {
+  animation: spinTheRecord infinite 3s linear;    /*works together with the one below to make the image spin*/
+  height: 50px;
+  filter: invert(1);    /*sets the colour of the ticker(ie the rotating cd) to white*/
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+}
+
+/*This sets the image to spin(rotate)*/
+@keyframes spinTheRecord {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
