@@ -1,7 +1,7 @@
 .video {
   position: relative;
   border-radius: 20px;
-  background-color: rgb(235, 47, 22);
+  background-color: white (235, 47, 22);
   height: 100%;
   width: 100%;
   scroll-snap-align: start; /*this tells react what to snap as set in App.css */
@@ -11,4 +11,8 @@
   object-fit: fill; /*sets the video to fill the container*/
   height: 100%; /*sets the video to cover the whole container height*/
   width: 100%; /*sets the video to cover the whole container width*/
+}
+
+.video__playIcon {
+  align-items: center;
 }

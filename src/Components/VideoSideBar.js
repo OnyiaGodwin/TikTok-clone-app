@@ -8,6 +8,7 @@ import PlaylistAddCircleIcon from "@mui/icons-material/PlaylistAddCircle";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import classes from "./VideoSideBar.module.css";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 function VideoSideBar(props) {
   const [liked, setLiked] = useState(false);
@@ -26,36 +27,35 @@ function VideoSideBar(props) {
   // };
 
   // const profileHandler = () => {
-  //   let like = 0;
-  //   if (liked) {
-  //     setLikedProfile(like);
-  //   } else {
-  //     like++;
-  //     setLikedProfile(like);
-  //   }
-  // };
-
-  // const clickHandler = (e) => {
-  //   setLiked(true);
+  //   return (<AccountCircleIcon
+  //     label="Recents"
+  //     icon={
+  //       <img
+  //         src="https://images.statusfacebook.com/profile_pictures/babies/babies_profile_picture4.jpg"
+  //         alt=""
+  //       />
+  //     }
+  //     fontSize="medium"
+  //   />)
   // };
 
   return (
     <div className={classes.videoSideBar}>
       <div className={classes.videoSideBar__button}>
-        <PlaylistAddCircleIcon fontSize="large"/>
+        <PlaylistAddCircleIcon fontSize="medium" />
         <p>{likes}</p>
       </div>
       <div className={classes.videoSideBar__button}>
         {liked ? (
           <FavoriteIcon
-            fontSize="large"
+            fontSize="medium"
             onClick={() => {
               setLiked(false);
             }}
           />
         ) : (
           <FavoriteBorderIcon
-            fontSize="large"
+            fontSize="medium"
             onClick={() => {
               setLiked(true);
             }}
@@ -64,25 +64,29 @@ function VideoSideBar(props) {
         <p>{liked ? likes + 1 : likes}</p>
       </div>
       <div className={classes.videoSideBar__button}>
-        <MessageIcon fontSize="large" />
+        <MessageIcon fontSize="medium" />
         <p>{messages}</p>
       </div>
       <div className={classes.videoSideBar__button}>
         {posted ? (
           <BookmarkIcon
-            fontSize="large"
-            onClick={(e) => {setPosted(false)}}
+            fontSize="medium"
+            onClick={(e) => {
+              setPosted(false);
+            }}
           />
         ) : (
           <BookmarkBorderIcon
-            fontSize="large"
-            onClick={(e) => {setPosted(true)}}
+            fontSize="medium"
+            onClick={(e) => {
+              setPosted(true);
+            }}
           />
         )}
         <p>{posted ? favorite + 1 : favorite}</p>
       </div>
       <div className={classes.videoSideBar__button}>
-        <ShareIcon />
+        <ShareIcon fontSize="medium" />
         <p>{shares}</p>
       </div>
     </div>

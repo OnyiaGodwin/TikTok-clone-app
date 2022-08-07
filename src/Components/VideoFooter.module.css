@@ -32,6 +32,7 @@
   height: fit-content;
   margin-left: 30px;
   width: 70%;
+  white-space: nowrap;  /*This prevents linebreaks, ie the text appearing in more than one line*/
 }
 
 .videoFooter__icon {

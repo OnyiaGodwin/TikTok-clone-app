@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 
+//import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import VideoFooter from "./VideoFooter";
 import VideoSideBar from "./VideoSideBar";
 import classes from "./Video.module.css";
@@ -15,6 +16,7 @@ function Video(props) {
     if (playing) {
       setPlaying(false);
       videoRef.current.pause();
+      //<PlayArrowIcon fontSize="large" className={classes.video__playIcon}/>
     } else {
       setPlaying(true);
       videoRef.current.play();
@@ -26,23 +28,15 @@ function Video(props) {
       <video
         className={classes.video__player}
         src={url}
+        //https://ftp.nluug.nl/pub/graphics/blender/demo/movies/ToS/tears_of_steel_720p.mov
         loop
         ref={videoRef}
         onClick={videoPressHandler}
         type="video/mp4"
-        /**OR*/
-        /*onClick={
-          playing
-            ? videoRef.current.pause() && setPlaying(false)
-            : videoRef.current.play() && setPlaying(true)
-        }*/
-      > <source src={url} type="video/mp4" /></video>
-
-      {/** VideoSideBar*/}
+      />     
 
       {/** VideoFooter*/}
       <VideoFooter channel={channel} description={description} song={song} />
-
       {/** VideoSideBar*/}
       <VideoSideBar
         likes={likes}

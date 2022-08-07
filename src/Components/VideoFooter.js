@@ -19,11 +19,10 @@ function VideoFooter(props) {
 
           {/**The display message at the footer */}
           <div className={classes.videoFooter__ticker__music}>
-            <Ticker mode="smooth" offset="run-in">
+            <Ticker mode="smooth" offset="run-in" >
               {({ index }) => (
                 <>
                   <p>{song}</p>
-                  {/* <img src="www.my-image-source.com/" alt="" /> */}
                 </>
               )}
             </Ticker>
