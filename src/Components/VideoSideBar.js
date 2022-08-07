@@ -8,13 +8,13 @@ import PlaylistAddCircleIcon from "@mui/icons-material/PlaylistAddCircle";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import classes from "./VideoSideBar.module.css";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+
 
 function VideoSideBar(props) {
   const [liked, setLiked] = useState(false);
   const [posted, setPosted] = useState(false);
 
-  let { likes, messages, shares, favorite } = props;
+  let { likes, messages, shares, favorite, onClickProfile} = props;
 
   // const clickHandler = () => {
   //   if (liked) {
@@ -42,7 +42,7 @@ function VideoSideBar(props) {
   return (
     <div className={classes.videoSideBar}>
       <div className={classes.videoSideBar__button}>
-        <PlaylistAddCircleIcon fontSize="medium" />
+        <PlaylistAddCircleIcon onClick={onClickProfile} fontSize="medium" />
         <p>{likes}</p>
       </div>
       <div className={classes.videoSideBar__button}>
